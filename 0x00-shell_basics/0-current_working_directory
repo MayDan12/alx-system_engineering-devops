@@ -1,4 +1,5 @@
 #!/bin/bash
 current_directory=$(pwd)
-echo "Current working directory: $current_directory"
+echo "Current working directory:"
+echo "$current_directory"
 
