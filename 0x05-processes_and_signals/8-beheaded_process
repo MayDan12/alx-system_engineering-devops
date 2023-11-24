@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This bash function Kills the process 7-highlander.
+# Mayowa Daniel
+
+pkill -f -SIGKILL 7-highlander
