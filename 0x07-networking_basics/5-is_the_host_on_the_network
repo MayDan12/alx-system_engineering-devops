@@ -8,3 +8,4 @@ then
 else
   ping -c 5 "$1"
 fi
+
