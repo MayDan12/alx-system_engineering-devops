@@ -1,5 +1,8 @@
-#!/usr/bin/env bash
+# rules.before
 # Firewalls can not only filter requests, they can also forward them.
+#   ufw-before-input
+#   ufw-before-output
+#   ufw-before-forward
 
 *nat
 :PREROUTING ACCEPT [0:0]
