@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This file configures a UFW firewall for the use of protection
+
+# This updates the package informations
+sudo apt-get update -y
+
+# This installs the UFW Firewall
+sudo apt-get install ufw -y
+
+# This enables the UFW Firewall
+sudo ufw enable
+
+# This denies all incoming traffics
+sudo ufw default deny incoming -y
+
+# This allows all outgoing traffic
+sudo ufw default allow outgoing -y
+
+# This allows some specific ports
+sudo ufw allow 22/tcp
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
