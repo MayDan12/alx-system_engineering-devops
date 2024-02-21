@@ -12,8 +12,8 @@ frontend  maydan-frontend
         default_backend maydan-backend
 backend maydan-backend
         balance roundrobin
-        server 477579-web-01 52.23.177.212:80 check
-        server 477579-web-02 54.221.182.176:80 check
+        server 477579-web-01 54.89.27.217:80 check
+        server 477579-web-02 54.160.99.222:80 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
