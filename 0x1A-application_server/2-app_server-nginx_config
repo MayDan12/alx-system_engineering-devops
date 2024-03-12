@@ -1,0 +1,28 @@
+# HTTP server block configuration for the Airbnb Onepage application
+
+server {
+  # Listen on all interfaces (local and public IP) and port 80
+  listen 80 default_server;
+
+  # Access log for this server block
+  access_log /var/log/nginx/airbnb-onepage.access.log;
+
+  # Set the root directory where your static files are located
+  root /path/to/your/airbnb-onepage/static;
+
+  # Serve static files directly from the root directory
+  location / {
+    try_files $uri /airbnb-onepage/index.html;
+    index index.html index.htm;
+  }
+
+  # Proxy all requests to the backend application server on port 5000
+  location /airbnb-onepage/ {
+    proxy_pass http://localhost:5000;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+  }
+}
